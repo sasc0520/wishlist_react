@@ -13,7 +13,7 @@ const StyledBurger = styled.div`
     flex-direction: column;
     width: 35px;
     height: 35px;
-    padding: 0.5rem 0rem 0rem 1rem;
+    padding: 0.5rem 1rem 2rem 1rem;
     z-index: 10;
         div {
             width: 30px;
