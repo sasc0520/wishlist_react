@@ -1,7 +1,6 @@
 import React, { useEffect, useState, Fragment } from "react";
 import Tabletop from "tabletop";
 import styled from "styled-components";
-import image from "../../imgs/blackpearls.PNG";
 import GlobalFonts from '../../fonts/fonts';
 
 const StyledDisplay = styled.div`
@@ -44,7 +43,7 @@ function DataFetching() {
              {items.map((item, i) => (
                 <Fragment key={i}>
                     <article>
-                        <img src={image} />
+                        <img  src={`../imgs/${item.product_img}.PNG`} />
                         <h2>
                             {item.name}
                         </h2>
