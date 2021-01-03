@@ -11,24 +11,51 @@ const StyledDisplay = styled.div`
     grid-gap: 40px;
     img {
         width: 100%;
+        height: 70%;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
     }
     h2 {
         font-family: 'Oswald Regular';
+        text-align: left;
+        margin: 1rem 0rem 1rem;
     }
     h3 {
         font-family: 'Montserrat Regular';
+        text-align: right;
+        margin: 0rem 0rem 1rem;
+    }
+    a {
+        background-color: #f77225;
+        padding: 1rem 3rem;
+        text-decoration: none;
+        font-family: 'Montserrat Regular';
+        font-weight: 400;
+        color: #ffffff;
+    }
+    a:hover {
+        background-color: #ffc760;
+        transition: 0.5s;        
     }
     @media (max-width: 768px) {
     max-width: none;
     margin: 0 auto;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    .content {
+        display: flex;
+        a {
+            width: 150px;
+        }
+    }
     }
 
 `;
 
 function DataFetching() {
     const [items, setItems] = useState([]);
-    
+
     useEffect(() => {
         Tabletop.init({
             key: "13Dyq8_Ehke2hiVZXub4PbzDFMO9Qbj_smVXwKYwXRZ8",
@@ -41,16 +68,18 @@ function DataFetching() {
     return(
         <StyledDisplay>
              {items.map((item, i) => (
-                <Fragment key={i}>
+                    <Fragment key={i}>
                     <article>
                         <img  src={`../imgs/${item.product_img}.PNG`} />
-                        <h2>
-                            {item.name}
-                        </h2>
-                        <h3>
-                            {item.price} ,-
-                        </h3>
-                        <a href={item.buttonlink}>Find den her</a>
+                        <div className="content">
+                            <h2>
+                                {item.name}
+                            </h2>
+                            <h3>
+                                {item.price}
+                            </h3>
+                            <a href={item.buttonlink}>Find den her</a>
+                        </div>
                     </article>
                 </Fragment>
              ))}

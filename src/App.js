@@ -1,6 +1,7 @@
+import React from "react";
 import Navbar from "../src/app/components/navBar/NavBar"
-import './App.css';
 import DataFetching from "./app/components/dataFetching/DataFetching";
+import './App.css';
 
 function App() {
   return (
